@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Aplicacion Empresa X</title>
+	<!-- ESTILOS CSS BULMA TUNEADO -->
+	<link rel="stylesheet" href="css/mystyles.css">
+	<!-- FONTAWESOME DESDE CDN -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<!-- SCRIPS JS MIOS -->
+	<script src="js/modificar.js" type="module" defer></script>
+</head>
+
+<body>
+	<!-- Hero con menu principal -->
+	<section class="hero is-info is-bold">
+		<div class="hero-head">
+		<header class="navbar">
+			<div class="container">
+				<div class="navbar-brand">
+					<a class="navbar-item">
+						<img src="img/default-monochrome-white.png" alt="Logo">
+					</a>
+				</div>
+				<div id="navbarMenuHeroC" class="navbar-menu">
+					<div class="navbar-end">
+						<a href="index.html" class="navbar-item">
+							Home
+						</a>
+						<a href="documentacion.html" class="navbar-item">
+							Documentación
+						</a>
+						<span class="navbar-item">
+							<a href="https://github.com/franbarreneche/Aplicaciones_TP_Promocion"
+								class="button is-dark is-inverted" target="_blank">
+								<span class="icon">
+									<i class="fab fa-github"></i>
+								</span>
+								<span>Github</span>
+							</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+		</div>
+
+		<div class="hero-body has-background-light">
+			<div id="panelMensajes" class="container">
+			</div>
+			<div id="formDatosPersonales" class="container box">
+				<h2 class="subtitle has-text-dark">Datos Personales</h2>
+				<div class="field">
+					<label class="label">ID: <span class="has-text-info" id="labelID">0</span></label>
+				</div>
+				<div class="field">
+					<label class="label">Apellido</label>
+					<div class="control has-icons-left has-icons-right">
+						<input id="inputApellido" class="input" type="text" placeholder="Ej: Perez" required>
+						<span class="icon is-small is-left">
+							<i class="fas fa-user"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Nombre</label>
+					<div class="control has-icons-left has-icons-right">
+						<input id="inputNombre" class="input" type="text" placeholder="Ej: Juan" required>
+						<span class="icon is-small is-left">
+							<i class="fas fa-user"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Email</label>
+					<div class="control has-icons-left has-icons-right">
+						<input id="inputEmail" class="input" type="email" placeholder="Ej: juan@gmail.com" required>
+						<span class="icon is-small is-left">
+							<i class="fas fa-envelope"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Documento</label>
+					<div class="field has-addons">
+						<p class="control">
+							<a class="button is-static">DNI</a>
+						</p>
+						<p class="control">
+							<input id="inputNumDoc" class="input" type="number" min="1000000" max="999000000"
+								placeholder="Ej: 35019385" required>
+						</p>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Fecha Nacimiento</label>
+					<div class="control has-icons-left has-icons-right">
+						<input id="inputFechaNac" class="input" type="date" required>
+						<span class="icon is-small is-left">
+							<i class="fas fa-calendar-alt"></i>
+						</span>
+					</div>
+				</div>
+
+				<div class="control">
+					<button id="botonModificarDatosPeronales" class="button is-info">
+						<span>Modificar</span>
+						<span class="icon">
+							<i class="fas fa-arrow-right"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+			<div class="container box">
+				<h2 class="subtitle has-text-dark">Datos del Puesto al que Aplica</h2>
+				<label class="label">Puesto</label>
+				<div class="field">
+					<div class="control has-icons-left">
+						<div class="select">
+							<select id="selectPuesto">
+								<option value="" disabled selected>Elija un Puesto</option>
+							</select>
+						</div>
+						<div class="icon is-small is-left">
+							<i class="fas fa-briefcase"></i>
+						</div>
+					</div>
+				</div>
+				<label class="label">Justificación</label>
+				<textarea id="inputJustificacion" class="textarea mb-4"></textarea>
+				<button id="botonModificarPuesto" class="button is-info">
+					<span>Modificar</span>
+					<span class="icon">
+						<i class="fas fa-arrow-right"></i>
+					</span>
+				</button>
+			</div>
+			<div class="container box">
+				<h2 class="subtitle has-text-dark">Foto del Postulante</h2>
+				<p>Debe cargar una foto suya.</p>
+				<p>Tenga en cuenta que el tamaño no debe superar los <em>300KB</em> y debe ser <em>.jpg</em>
+					o <em>.png</em></p>
+				<figure class="image is-128x128 mt-4 mb-4">
+					<img id="fotoPostulante" class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+				</figure>
+				<div class="field mt-4">
+					<div class="file is-link has-name">
+						<label class="file-label">
+							<input id="inputFoto" class="file-input" type="file" accept="image/png, image/jpeg">
+							<span class="file-cta">
+								<span class="file-icon">
+									<i class="fas fa-upload"></i>
+								</span>
+								<span class="file-label">
+									Foto
+								</span>
+							</span>
+							<span id="textoInputFoto" class="file-name">
+								...
+							</span>
+						</label>
+					</div>
+				</div>
+				<button id="botonModificarFoto" class="button is-info">
+					<span>Modificar</span>
+					<span class="icon">
+						<i class="fas fa-arrow-right"></i>
+					</span>
+				</button>
+			</div>
+			<div class="container box">
+				<h2 class="subtitle has-text-dark">Curriculum Vitae</h2>
+				<p>Debe encontrarse en formato <em>.pdf</em></p>
+				<p>Tenga en cuenta que el nombre del archivo debe respetar el siguiente patrón:
+					<em>cv_apellido_nombre.pdf</em>
+				</p>
+				<a id="linkCV" href="#" class="has-text-link">Link al CV</a>
+				<div class="field mt-4">
+					<div class="file is-link has-name">
+						<label class="file-label">
+							<input id="inputCV" class="file-input" type="file" accept=".pdf">
+							<span class="file-cta">
+								<span class="file-icon">
+									<i class="fas fa-upload"></i>
+								</span>
+								<span class="file-label">
+									CV
+								</span>
+							</span>
+							<span id="textoInputCV" class="file-name">
+								...
+							</span>
+						</label>
+					</div>
+				</div>
+				<button id="botonModificarCV" class="button is-info">
+					<span>Modificar</span>
+					<span class="icon">
+						<i class="fas fa-arrow-right"></i>
+					</span>
+				</button>
+			</div>
+		</div>
+		<!-- Hero footer: will stick at the bottom -->
+		<div class="hero-foot">
+			<nav class="tabs is-boxed is-fullwidth">
+				<div class="container">
+					<ul>
+						<li><a>Francisco Barreneche - 2021 - Aplicaciones I - UPSO</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</section>
+</body>
+
+</html>

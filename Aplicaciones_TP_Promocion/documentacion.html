@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aplicacion Empresa X</title>
+    <!-- ESTILOS CSS BULMA TUNEADO -->
+    <link rel="stylesheet" href="css/mystyles.css">
+    <!-- FONTAWESOME DESDE CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- SCRIPS JS MIOS -->
+    <script src="js/home.js" type="module" defer></script>
+</head>
+
+<body>
+    <section class="hero is-info is-fullheight is-bold">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <header class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item">
+                            <img src="img/default-monochrome-white.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.html" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="documentacion.html" class="navbar-item is-active">
+                                Documentación
+                            </a>
+                            <span class="navbar-item">
+                                <a href="https://github.com/franbarreneche/Aplicaciones_TP_Promocion"
+                                    class="button is-dark is-inverted" target="_blank">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Github</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body has-background-light">
+            <section class="container has-text-centered box">
+                <h1 class="title has-text-dark">DOCUMENTACIÓN</h1>
+                <article class="block">
+                    <p>Trabajo para la cátedra Aplicaciones I de la UPSO, dictada en el segundo semestre del año 2020.</p>
+                    <p>Antes de correr el sistema es prudente leer las siguientes consideraciones:</p>
+                </article>
+                <article class="block">
+                    <h2 class="subtitle has-text-dark">INFORMACIÓN ÚTIL</h2>
+                    <ul>
+                        <li>El script de la base datos se entrega en un archivo separado llamado <code>scrips.zip</code>.</li>
+                        <li>Los archivos para testear se entregan en un archivo separado llamado <code>datos_prueba.zip</code>.</li>
+                        <li>La configuracion de la base de datos está en <code>backend/config.php</code>.</li>
+                        <li>La dirección a la que el frontend dirige las consultas asincrónicas se encuentra en <code>frontend/js/servicios/apicalls.js</code> (por defecto es <code>http://localhost/empresa/backend/</code>).</li>
+                    </ul>
+                </article>
+                <article class="block">
+                    <h2 class="subtitle has-text-dark">PASOS</h2>
+                    <ul>
+                        <li>Abrir el PSQL (SQL Shell) y loguearse.</li>
+                        <li>Crear la BD: <code>CREATE DATABASE tp_aplicaciones</code></li>
+                        <li>Entrar a la BD: <code>\c tp_aplicaciones</code></li>
+                        <li>Copiar las tablas y datos del backup a la BD: <code>\i 'ruta/al/archivo/tablas_y_datos.sql'</code></li>
+                        <li>Crear el usuario: <code>CREATE USER usuario_tp WITH ENCRYPTED PASSWORD '123456';</code></li>
+                        <li>Darle privilegios: <code>GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO usuario_tp;</code></li>
+                        <li>Si la BD y el usuario que se pretenden usar no son los indicados en los pasos anteriores, se deben modificar por los correctos en el archivo php de configuración.</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li><a>Francisco Barreneche - 2021 - Aplicaciones I - UPSO</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Aplicacion Empresa X</title>
+	<!-- ESTILOS CSS BULMA TUNEADO -->
+	<link rel="stylesheet" href="css/mystyles.css">
+	<!-- FONTAWESOME DESDE CDN -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<!-- SCRIPS JS MIOS -->
+	<script src="js/home.js" type="module" defer></script>
+</head>
+
+<body>
+	<section class="hero is-info is-fullheight is-bold">
+		<!-- Hero head: will stick at the top -->
+		<div class="hero-head">
+			<header class="navbar">
+				<div class="container">
+					<div class="navbar-brand">
+						<a class="navbar-item">
+							<img src="img/default-monochrome-white.png" alt="Logo">
+						</a>
+					</div>
+					<div id="navbarMenuHeroC" class="navbar-menu">
+						<div class="navbar-end">
+							<a href="index.html" class="navbar-item is-active">
+								Home
+							</a>
+							<a href="documentacion.html" class="navbar-item">
+								Documentación
+							</a>
+							<span class="navbar-item">
+								<a href="https://github.com/franbarreneche/Aplicaciones_TP_Promocion"
+									class="button is-dark is-inverted" target="_blank">
+									<span class="icon">
+										<i class="fab fa-github"></i>
+									</span>
+									<span>Github</span>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</header>
+		</div>
+
+		<!-- Hero content: will be in the middle -->
+		<div class="hero-body has-background-light">
+			<section class="container ">
+				<div class="columns">
+					<div class="column">
+						<h1 class="title has-text-dark is-size-1"><strong>TE ESTAMOS BUSCANDO!</strong></h1>
+						<h2 class="subtitle has-text-grey is-size-2">Aviso de reclutamiento</h2>
+						<p class="has-text-dark is-size-4">Estamos buscando gente con <strong
+								class="has-text-info">tú</strong> talento. </p>
+						<p class="has-text-dark is-size-4">Si crees que tenes suficiente, te invitamos a
+							<em>inscribirte</em>.</p>
+						<p class="has-text-dark is-size-4">Registrate y esperá a que te llamemos!!!.</p>
+						<a href="registrar.html" class="button is-info is-outlined is-large mt-4">Registrarme</a>
+					</div>
+					<div class="column">
+						<figure class="image imagen-portada">
+							<img src="img/coworkers.svg">
+						</figure>
+					</div>
+				</div>
+				<div id="formBusqueda" class="box">					
+					<div class="field is-horizontal">
+						<div class="field-label is-normal">
+							<h1 class="subtitle has-text-info"><span class="icon-text">
+								<span class="icon">
+									<i class="fas fa-search"></i>
+								</span>
+								<span>Buscar</span>
+							</span>
+						</h1>
+						</div>
+					<div class="field-body">
+						<div class="field has-addons">
+							<p class="control">
+								<a class="button is-link">DNI</a>
+							</p>
+							<p class="control">
+								<input id="inputNumDoc" class="input" type="number" min="1000000" max="999000000"
+									placeholder="Ej: 35019385">
+							</p>
+						</div>
+						<div class="field has-addons">
+							<p class="control">
+								<a id="botonID" class="button is-link">ID</a>
+							</p>
+							<p class="control">
+								<input id="inputID" class="input" type="number" min="1000000" max="999000000"
+									placeholder="Ej: 125">
+							</p>
+						</div>
+						<div class="field has-addons">
+							<p class="control">
+								<a id="botonEmail" class="button is-static">Email</a>
+							</p>
+							<p class="control">
+								<input id="inputEmail" class="input" type="email" placeholder="Ej: fran@gmail.com">
+							</p>
+						</div>
+					</div>
+					</div>				
+					<p class="help is-info has-text-centered">
+						Debe ingresar obligatoriamente el Documento y al menos uno de los otros dos datos (ID o Email).
+					</p>
+				</div>				
+				<div class="control has-text-centered">
+					<button id="botonBuscar" class="button is-info is-medium">Buscar</button>
+				</div>
+				<div id="panelMensajes" class="section"></div>				
+			</section>
+		</div>
+		</div>
+
+		<!-- Hero footer: will stick at the bottom -->
+		<div class="hero-foot">
+			<nav class="tabs is-boxed is-fullwidth">
+				<div class="container">
+					<ul>
+						<li><a>Francisco Barreneche - 2021 - Aplicaciones I - UPSO</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</section>
+</body>
+
+</html>
